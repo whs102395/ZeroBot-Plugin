@@ -267,8 +267,8 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 				return
 			}
-			if favor < 30 {
-				favor = 30 // 保底30%概率
+			if favor < 100 {
+				favor = 100 // 保底30%概率
 			}
 			if rand.Intn(101) >= favor {
 				ctx.SendChain(message.Text(sendtext[1][rand.Intn(len(sendtext[1]))]))
@@ -326,8 +326,8 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 				return
 			}
-			if favor < 30 {
-				favor = 30 // 保底10%概率
+			if favor < 100 {
+				favor = 100 // 保底10%概率
 			}
 			if rand.Intn(101) >= favor/3 {
 				ctx.SendChain(message.Text("失败了！可惜"))
@@ -373,11 +373,11 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]复婚登记失败力\n", err))
 				return
 			}
-			favor, err = 民政局.setFavorability(userAID, userCID, -5)
+			favor, err = 民政局.setFavorability(userAID, userCID, -1)
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
-			_, err = 民政局.setFavorability(userAID, userBID, 5)
+			_, err = 民政局.setFavorability(userAID, userBID, 50)
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
@@ -411,8 +411,8 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 				return
 			}
-			if favor < 30 {
-				favor = 30 // 保底30%概率
+			if favor < 100 {
+				favor = 100 // 保底30%概率
 			}
 			if rand.Intn(101) >= favor {
 				_, err = 民政局.setFavorability(uid, gayOne, -1)
