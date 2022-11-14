@@ -220,7 +220,7 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]数据库发生问题力\n", err))
 				return
 			}
-			favor, err := 民政局.setFavorability(uid, fiancee, 1+rand.Intn(5))
+			favor, err := 民政局.setFavorability(uid, fiancee, 5+rand.Intn(100))
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
@@ -432,15 +432,15 @@ func init() {
 				ctx.SendChain(message.Text("[qqwife]结婚登记失败力\n", err))
 				return
 			}
-			_, err = 民政局.setFavorability(uid, gayOne, 1)
+			_, err = 民政局.setFavorability(uid, gayOne, 50)
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
-			_, err = 民政局.setFavorability(uid, gayZero, 1)
+			_, err = 民政局.setFavorability(uid, gayZero, 50)
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
-			_, err = 民政局.setFavorability(gayOne, gayZero, 1)
+			_, err = 民政局.setFavorability(gayOne, gayZero, 50)
 			if err != nil {
 				ctx.SendChain(message.Text("[qqwife]好感度库发生问题力\n", err))
 			}
